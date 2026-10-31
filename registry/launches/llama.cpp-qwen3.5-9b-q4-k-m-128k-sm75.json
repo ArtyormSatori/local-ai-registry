@@ -1,0 +1,43 @@
+{
+  "id": "llama.cpp-qwen3.5-9b-q4-k-m-128k-sm75",
+  "kind": "host",
+  "engine": "llama.cpp",
+  "about": "Qwen3.5-9B Q4_K_M at 128K on RTX 2080 Ti 11GB (Turing sm_75): llama-server source-built from ggml-org/llama.cpp commit 25ae3a9b331f with CUDA sm_75, q8_0 KV cache to fit 128K in 11 GB",
+  "command": [
+    "llama-server",
+    "-m",
+    "/models/Qwen3.5-9B-Q4_K_M.gguf",
+    "--ctx-size",
+    "131072",
+    "--n-gpu-layers",
+    "999",
+    "--flash-attn",
+    "auto",
+    "--cache-type-k",
+    "q8_0",
+    "--cache-type-v",
+    "q8_0",
+    "--jinja",
+    "--parallel",
+    "1",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8080"
+  ],
+  "install": "https://github.com/ggml-org/llama.cpp/tree/25ae3a9b331f",
+  "port": 8080,
+  "ctx": 131072,
+  "seqs": 1,
+  "vision": false,
+  "backend": "nvidia",
+  "cards": 1,
+  "weights": [
+    {
+      "repo": "unsloth/Qwen3.5-9B-GGUF",
+      "revision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+      "at": "/models",
+      "files": ["Qwen3.5-9B-Q4_K_M.gguf"]
+    }
+  ]
+}
